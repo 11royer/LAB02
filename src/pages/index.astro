@@ -1,0 +1,91 @@
+
+---
+// Importa los módulos necesarios
+import PostCard from '../components/PostCard.astro';
+
+// Obtiene los posts del API
+const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+const posts = await res.json();
+---
+
+<html>
+<head>
+  <title>Mi Blog en Astro</title>
+  <head>
+    <title>Mi Sitio</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav {
+        background-color: #0a0000;
+        padding: 10px 0;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        display: inline;
+        margin-right: 20px;
+      }
+
+      li:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Blog</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+  <h1>Bienvenido a mi Blog</h1>
+  <div>
+    {posts.map(post => (
+      <PostCard key={post.id} post={post} />
+    ))}
+  </div>
+  <footer>
+    <style>
+      footer {
+        background-color: #080101;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+  
+      p {
+        margin: 0;
+        font-size: 14px;
+      }
+    </style>
+    <p>MI SITIO WEB 2024 : Todos los derechos reservados.. &#x1F0608;</p>
+  </footer>  
+</body>
+</html>
+

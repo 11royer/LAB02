@@ -1,0 +1,28 @@
+
+/* public/global.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #df8b8b;
+  }
+  
+  a {
+    color: #880808;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  
+  h1, h2 {
+    color: #6f022a;
+  }
+  
+  
